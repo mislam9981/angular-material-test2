@@ -11,6 +11,9 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
 import { EmployeeCreateComponent } from './employees/employee-create/employee-create.component';
 import { MaterialModule } from './shared/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeeAddComponent } from './employees/employee-add/employee-add.component';
+import { EmployeeService } from './shared/employee.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     EmployeesComponent,
     EmployeeComponent,
     EmployeeListComponent,
-    EmployeeCreateComponent
+    EmployeeCreateComponent,
+    EmployeeAddComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +31,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     AppRoutingModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
